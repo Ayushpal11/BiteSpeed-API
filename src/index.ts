@@ -3,6 +3,7 @@ import cors from "cors";
 import { AppDataSource } from "./config/database";
 import { ContactService } from "./services/ContactService";
 import dotenv from "dotenv";
+import path from 'path';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Initialize database connection
 AppDataSource.initialize()
@@ -67,6 +69,10 @@ app.put("/identify", async (req, res) => {
         console.error("Error in PUT /identify endpoint:", error);
         res.status(400).json({ error: error.message });
     }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(port, () => {
