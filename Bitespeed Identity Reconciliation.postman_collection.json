@@ -1,0 +1,229 @@
+{
+    "info": {
+        "name": "Bitespeed Identity Reconciliation Full",
+        "_postman_id": "bitespeed-identity-reconciliation-full-collection",
+        "description": "Comprehensive collection for the /identify endpoint and future expansion",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Identify Contact (email & phone)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"mcfly@hillvalley.edu\",\n    \"phoneNumber\": \"123456\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Identify Contact (only email)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"lorraine@hillvalley.edu\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Identify Contact (only phone)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"phoneNumber\": \"123456\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Identify Contact (new unrelated email & phone)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"doc@hillvalley.edu\",\n    \"phoneNumber\": \"999999\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Identify Contact (existing phone, new email)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"biff@hillvalley.edu\",\n    \"phoneNumber\": \"123456\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Identify Contact (existing email, new phone)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"mcfly@hillvalley.edu\",\n    \"phoneNumber\": \"888888\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GET Example (future expansion)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/identify?email=mcfly@hillvalley.edu",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ],
+                    "query": [
+                        {
+                            "key": "email",
+                            "value": "mcfly@hillvalley.edu"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "PUT Example (future expansion)",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1,\n    \"email\": \"updated@hillvalley.edu\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/identify",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "identify"
+                    ]
+                }
+            }
+        }
+    ]
+}
